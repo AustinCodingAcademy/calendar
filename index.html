@@ -61,42 +61,33 @@
           </li>
         </ul>
       </div>
-      <div class="card-block tab-content">
-        <div class="tab-pane active" id="austin">
-          <h4 class="card-title">Austin Events</h4>
-          <div class="h_iframe">
-            <img class="ratio" src="http://placehold.it/8x6/ffffff/ffffff">
-            <iframe src="https://calendar.google.com/calendar/embed?src=austincodingacademy.com_32c8lk59hohrjrhrra080dgnuc%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" frameborder="0" scrolling="no"></iframe>
-          </div>
-        </div>
-        <div class="tab-pane" id="san-antonio">
-          <h4 class="card-title">San Antonio Events</h4>
-          <div class="h_iframe">
-            <img class="ratio" src="http://placehold.it/8x6/ffffff/ffffff">
-            <iframe src="https://calendar.google.com/calendar/embed?src=austincodingacademy.com_jl117iian9r8ls03rn52qnf628%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" frameborder="0" scrolling="no"></iframe>
-          </div>
-        </div>
-        <div class="tab-pane" id="dallas">
-          <h4 class="card-title">Dallas Events</h4>
-          <div class="h_iframe">
-            <img class="ratio" src="http://placehold.it/8x6/ffffff/ffffff">
-            <iframe src="https://calendar.google.com/calendar/embed?src=austincodingacademy.com_ru7uurqr2ba3nj2fqk35jp7kls%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" frameborder="0" scrolling="no"></iframe>
-          </div>
-        </div>
-        <div class="tab-pane" id="houston">
-          <h4 class="card-title">Houston Events</h4>
-          <div class="h_iframe">
-            <img class="ratio" src="http://placehold.it/8x6/ffffff/ffffff">
-            <iframe src="https://calendar.google.com/calendar/embed?src=austincodingacademy.com_rmgbfhv4pr6uuvb5at1v0b1h74%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" frameborder="0" scrolling="no"></iframe>
-          </div>
-        </div>
-      </div>
+      <div class="card-block tab-content"></div>
     </div>
   </div>
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.2/es6-shim.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+  <script>
+  $.ajax('./calendars.json', {
+    success: calendars => {
+      calendars.forEach((calendar, idx) => {
+        $('.tab-content').append(
+          `
+          <div class="tab-pane ${idx === 0 ? 'active': ''}" id="${calendar.id}">
+            <h4 class="card-title">${calendar.name}</h4>
+            <div class="h_iframe">
+              <img class="ratio" src="http://placehold.it/8x6/ffffff/ffffff">
+              <iframe src="${calendar.url}" style="border: 0" frameborder="0" scrolling="no"></iframe>
+            </div>
+          </div>
+          `
+        )
+      });
+    }
+  });
+  </script>
 </body>
 </html>
