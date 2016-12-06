@@ -64,7 +64,7 @@
         $('.nav-pills').append(
           `
           <li class="nav-item">
-            <a class="nav-link active" href="#calendar-${idx}" data-toggle="tab">${calendar.name}</a>
+            <a class="nav-link ${idx === 0 ? 'active': ''}" href="#calendar-${idx}" data-toggle="tab">${calendar.name}</a>
           </li>
           `
         );
