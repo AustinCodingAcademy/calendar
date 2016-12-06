@@ -76,7 +76,7 @@
       calendars.forEach((calendar, idx) => {
         $('.tab-content').append(
           `
-          <div class="tab-pane ${idx === 0 ? 'active': ''}" id="${calendar.id}">
+          <div class="tab-pane ${idx === 0 ? 'active': ''}" id="calendar-${idx}">
             <h4 class="card-title">${calendar.name}</h4>
             <div class="h_iframe">
               <img class="ratio" src="http://placehold.it/8x6/ffffff/ffffff">

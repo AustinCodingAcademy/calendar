@@ -1,22 +1,18 @@
 [
   {
     "name": "Austin Events",
-    "id": "austin",
     "url": "https://calendar.google.com/calendar/embed?src=austincodingacademy.com_32c8lk59hohrjrhrra080dgnuc%40group.calendar.google.com&ctz=America/Chicago"
   },
   {
     "name": "San Antonio Events",
-    "id": "san-antonio",
     "url": "https://calendar.google.com/calendar/embed?src=austincodingacademy.com_jl117iian9r8ls03rn52qnf628%40group.calendar.google.com&ctz=America/Chicago"
   },
   {
     "name": "Dallas Events",
-    "id": "dallas",
     "url": "https://calendar.google.com/calendar/embed?src=austincodingacademy.com_ru7uurqr2ba3nj2fqk35jp7kls%40group.calendar.google.com&ctz=America/Chicago"
   },
   {
     "name": "Houston Events",
-    "id": "houston",
     "url": "https://calendar.google.com/calendar/embed?src=austincodingacademy.com_rmgbfhv4pr6uuvb5at1v0b1h74%40group.calendar.google.com&ctz=America/Chicago"
   }
 ]
