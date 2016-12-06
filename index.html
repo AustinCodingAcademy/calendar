@@ -46,20 +46,7 @@
   <div class="container">
     <div class="card text-xs-center">
       <div class="card-header">
-        <ul class="nav nav-pills card-header-pills float-xs-left">
-          <li class="nav-item">
-            <a class="nav-link active" href="#austin" data-toggle="tab">Austin</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#san-antonio" data-toggle="tab">San Antonio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#dallas" data-toggle="tab">Dallas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#houston" data-toggle="tab">Houston</a>
-          </li>
-        </ul>
+        <ul class="nav nav-pills card-header-pills float-xs-left"></ul>
       </div>
       <div class="card-block tab-content"></div>
     </div>
@@ -74,6 +61,13 @@
   $.ajax('./calendars.json', {
     success: calendars => {
       calendars.forEach((calendar, idx) => {
+        $('nav nav-pills').append(
+          `
+          <li class="nav-item">
+            <a class="nav-link active" href="#calendar-${idx}" data-toggle="tab">${calendar.name}</a>
+          </li>
+          `
+        );
         $('.tab-content').append(
           `
           <div class="tab-pane ${idx === 0 ? 'active': ''}" id="calendar-${idx}">
