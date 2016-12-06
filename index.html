@@ -61,7 +61,7 @@
   $.ajax('./calendars.json', {
     success: calendars => {
       calendars.forEach((calendar, idx) => {
-        $('nav nav-pills').append(
+        $('.nav-pills').append(
           `
           <li class="nav-item">
             <a class="nav-link active" href="#calendar-${idx}" data-toggle="tab">${calendar.name}</a>
